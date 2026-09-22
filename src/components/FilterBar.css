@@ -1,0 +1,97 @@
+.filterbar {
+  display: flex;
+  align-items: stretch;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  min-height: 46px;
+}
+
+.fb-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  border-right: 1px solid var(--border-soft);
+  min-width: 0;
+  color: var(--text-subtle);
+}
+.fb-cell:last-child { border-right: none; }
+
+.fb-search input,
+.fb-dates input {
+  border: none;
+  background: none;
+  outline: none;
+  width: 100%;
+  min-width: 0;
+  font-size: 13.5px;
+  color: var(--text);
+}
+.fb-search input::placeholder { color: var(--text-subtle); }
+
+.fb-dates { gap: 6px; }
+.fb-legend { font-size: 13px; color: var(--text-muted); flex: none; }
+.fb-dates input {
+  font-size: 13px;
+  color: var(--text-muted);
+  width: 124px;
+  min-width: 124px;
+  font-variant-numeric: tabular-nums;
+}
+.fb-dates input:focus { color: var(--text); }
+
+.fb-select { position: relative; cursor: pointer; }
+.fb-select select {
+  appearance: none;
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 13.5px;
+  color: var(--text);
+  cursor: pointer;
+  width: 100%;
+  min-width: 0;
+  padding-right: 4px;
+}
+.fb-select svg { flex: none; pointer-events: none; }
+
+.fb-action {
+  flex: none;
+  padding: 0 18px;
+  color: var(--accent);
+  font-size: 13.5px;
+  font-weight: 540;
+  background: var(--surface);
+}
+.fb-action:hover { background: var(--accent-soft); }
+
+/* ---------- saved views ---------- */
+.viewtabs { display: flex; align-items: center; gap: 4px; }
+.viewtab {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 30px;
+  padding: 0 11px;
+  border-radius: var(--r-full);
+  font-size: 13px;
+  font-weight: 520;
+  color: var(--text-muted);
+  border: 1px solid transparent;
+  transition: background .12s var(--ease), color .12s var(--ease), border-color .12s var(--ease);
+}
+.viewtab:hover { background: var(--surface-3); color: var(--text); }
+.viewtab.is-active {
+  background: var(--surface);
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+.viewtab-count {
+  font-size: 11px;
+  font-weight: 620;
+  color: var(--text-subtle);
+  font-variant-numeric: tabular-nums;
+}
+.viewtab.is-active .viewtab-count { color: var(--accent); }

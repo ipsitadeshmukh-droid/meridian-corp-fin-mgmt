@@ -1,0 +1,128 @@
+/* Meridian Commercial — design tokens
+   Every color, space and type step in the product resolves through here.
+   Dark mode is a token swap only; no component re-styles. */
+
+:root {
+  /* --- surfaces --- */
+  --canvas:        #F6F5F2;
+  --surface:       #FFFFFF;
+  --surface-2:     #FAFAF8;
+  --surface-3:     #F1F0EC;
+  --surface-inv:   #17171A;
+  --rail:          #FFFFFF;
+
+  /* --- lines --- */
+  --border:        #E7E5DE;
+  --border-soft:   #EFEDE7;
+  --border-strong: #D6D3C9;
+
+  /* --- text --- */
+  --text:          #17171A;
+  --text-muted:    #6E6C66;
+  --text-subtle:   #9B988F;
+  --text-inv:      #FFFFFF;
+
+  /* --- accent --- */
+  --accent:        #E0562D;
+  --accent-hover:  #C7451E;
+  --accent-soft:   #FCEBE4;
+  --accent-line:   #F2C4B2;
+
+  /* --- semantic --- */
+  --pos:           #12805C;
+  --pos-soft:      #E4F3ED;
+  --warn:          #A9711A;
+  --warn-soft:     #FAF0DC;
+  --neg:           #BF3A2B;
+  --neg-soft:      #FAEAE7;
+  --info:          #2E5FB0;
+  --info-soft:     #E9EFFA;
+  --neutral-soft:  #F0EEE9;
+
+  /* --- data viz: categorical ramp, fixed order.
+         Validated with the dataviz palette checker on the adjacent pairlist in
+         both modes: lightness band, chroma floor, normal-vision ΔE 19.6 light /
+         19.3 dark. CVD separation lands in the 6–8 warn band, so every series
+         also carries a label — colour never identifies a series on its own. --- */
+  --viz-1: #eb6834;  /* orange  */
+  --viz-2: #2a78d6;  /* blue    */
+  --viz-3: #1baf7a;  /* aqua    */
+  --viz-4: #4a3aa7;  /* violet  */
+  --viz-5: #e87ba4;  /* magenta */
+  --viz-6: #eda100;  /* yellow  */
+  --viz-7: #008300;  /* green   */
+  --viz-8: #e34948;  /* red     */
+  --viz-grid: #EAE8E2;
+  --viz-ghost: #C9C6BE;
+
+  /* --- elevation --- */
+  --shadow-sm: 0 1px 2px rgba(23, 23, 26, .05);
+  --shadow-md: 0 4px 16px -4px rgba(23, 23, 26, .10), 0 1px 3px rgba(23, 23, 26, .05);
+  --shadow-lg: 0 24px 60px -16px rgba(23, 23, 26, .22), 0 2px 8px rgba(23, 23, 26, .06);
+
+  /* --- radius --- */
+  --r-xs: 4px;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-full: 999px;
+
+  /* --- type --- */
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+
+  /* --- layout --- */
+  --rail-w: 60px;
+  --nav-w: 232px;
+  --topbar-h: 60px;
+
+  --ease: cubic-bezier(.2, .7, .3, 1);
+}
+
+:root[data-theme="dark"] {
+  --canvas:        #121214;
+  --surface:       #1A1A1D;
+  --surface-2:     #202024;
+  --surface-3:     #26262B;
+  --surface-inv:   #F6F5F2;
+  --rail:          #1A1A1D;
+
+  --border:        #2C2C31;
+  --border-soft:   #252529;
+  --border-strong: #3A3A41;
+
+  --text:          #F2F1EE;
+  --text-muted:    #9C9A94;
+  --text-subtle:   #6E6C67;
+  --text-inv:      #17171A;
+
+  --accent:        #F26B3F;
+  --accent-hover:  #FF7E53;
+  --accent-soft:   #33201A;
+  --accent-line:   #5C3325;
+
+  --pos:           #3FBE8F;
+  --pos-soft:      #14291F;
+  --warn:          #D9A343;
+  --warn-soft:     #2C2415;
+  --neg:           #E8695A;
+  --neg-soft:      #301A17;
+  --info:          #6D9BE8;
+  --info-soft:     #16203A;
+  --neutral-soft:  #26262B;
+
+  --viz-1: #d95926;
+  --viz-2: #3987e5;
+  --viz-3: #199e70;
+  --viz-4: #9085e9;
+  --viz-5: #d55181;
+  --viz-6: #c98500;
+  --viz-7: #008300;
+  --viz-8: #e66767;
+  --viz-grid: #2A2A2F;
+  --viz-ghost: #46464D;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
+  --shadow-md: 0 4px 16px -4px rgba(0, 0, 0, .55), 0 1px 3px rgba(0, 0, 0, .4);
+  --shadow-lg: 0 24px 60px -16px rgba(0, 0, 0, .7), 0 2px 8px rgba(0, 0, 0, .5);
+}
