@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import {
   IconOverview, IconClients, IconCash, IconCredit, IconRisk, IconTreasury,
-  IconAdmin, IconSearch, IconBell, IconSun, IconMoon,
+  IconReports, IconAdmin, IconSearch, IconBell, IconSun, IconMoon,
   IconChevronDown, IconHelp, IconBook, IconLogout, IconGear,
 } from './Icons.jsx'
 import CommandPalette from './CommandPalette.jsx'
@@ -56,6 +56,12 @@ export const SECTIONS = [
     items: [
       { to: '/treasury/liquidity', label: 'Liquidity & sweeps' },
       { to: '/treasury/fx', label: 'FX exposure' },
+    ],
+  },
+  {
+    id: 'reports', label: 'Reports', icon: IconReports, match: (p) => p.startsWith('/reports'),
+    items: [
+      { to: '/reports', label: 'Reports', end: true },
     ],
   },
   {

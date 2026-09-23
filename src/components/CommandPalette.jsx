@@ -14,6 +14,7 @@ const PAGES = [
   { label: 'Payments & approvals', to: '/approvals' },
   { label: 'Facilities', to: '/credit/facilities' },
   { label: 'Alert queue', to: '/risk/alerts' },
+  { label: 'Reports', to: '/reports' },
   { label: 'Reference data', to: '/reference' },
 ]
 

@@ -1,0 +1,65 @@
+/* The shell caps pages at a 1480px reading measure, which is right for prose
+   and tables but squeezes a Liveboard: tiles lay out against the width they
+   are handed, and a four-up KPI tile truncates its values well before that.
+   Reports is a dashboard, so let it use the whole viewport. */
+.page.page-reports { max-width: none; }
+
+/* The embed is a foreign document, so it gets the same frame treatment a card
+   would — border, radius, clipped corners — and nothing else. */
+.ts-embed-frame {
+  position: relative;
+  min-height: 620px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+
+.ts-embed,
+.ts-embed iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
+.ts-embed-loading {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 13.5px;
+  /* Never intercept clicks meant for the frame underneath. */
+  pointer-events: none;
+}
+
+/* A non-blocking notice. It sits above the frame and never replaces it — the
+   embed's own response is usually more informative than anything said here. */
+.ts-embed-note {
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  background: var(--warn-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  color: var(--text);
+  font-size: 13px;
+}
+
+.ts-embed-spinner {
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--border-strong);
+  border-top-color: var(--accent);
+  border-radius: var(--r-full);
+  animation: ts-embed-spin .7s linear infinite;
+}
+
+@keyframes ts-embed-spin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .ts-embed-spinner { animation: none; }
+}

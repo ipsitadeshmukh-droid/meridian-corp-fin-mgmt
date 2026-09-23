@@ -9,5 +9,5 @@ const root = fileURLToPath(new URL('.', import.meta.url))
 export default defineConfig({
   root,
   plugins: [react()],
-  server: { port: 5180, strictPort: true },
+  server: { port: 3000, strictPort: true },
 })
